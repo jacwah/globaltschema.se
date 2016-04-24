@@ -16,5 +16,3 @@ describe 'Controller: ScheduleCtrl', ->
       # place here mocked dependencies
     }
 
-  it 'should attach a list of awesomeThings to the scope', ->
-    expect(ScheduleCtrl.awesomeThings.length).toBe 3
