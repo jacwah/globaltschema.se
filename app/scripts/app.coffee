@@ -17,9 +17,9 @@ angular
   .config ($routeProvider) ->
     $routeProvider
       .when '/',
-        templateUrl: 'views/main.html'
-        controller: 'MainCtrl'
-        controllerAs: 'main'
+        templateUrl: 'views/schedule.html'
+        controller: 'ScheduleCtrl'
+        controllerAs: 'schedule'
       .when '/about',
         templateUrl: 'views/about.html'
         controller: 'AboutCtrl'
