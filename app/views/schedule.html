@@ -1,6 +1,9 @@
 <p>
   <label>Schemanamn</label>
-  <input class="id-input" type="text" inputmode="verbatim" list="schedule-id-list">
+  <div class="id-editor">
+    <span class="id-box" ng-repeat="id in idEditor.ids">{{id}}</span>
+    <input class="id-input" type="text" inputmode="verbatim" list="schedule-id-list">
+  </div>
 </p>
 
 <img ng-src="{{schedule.getUrl()}}" alt="Schema" class="img-responsive">
