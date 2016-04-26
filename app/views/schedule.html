@@ -1,7 +1,7 @@
 <p>
   <label>Schemanamn</label>
-  <div class="id-editor">
-    <span class="id-box" ng-repeat="id in idEditor.ids">{{id}}</span>
+  <div class="id-editor" ng-controller="IdEditorCtrl as idEditor">
+    <span class="schedule-id" ng-repeat="id in idEditor.ids">{{id}}</span>
     <input class="id-input" type="text" inputmode="verbatim" list="schedule-id-list">
   </div>
 </p>
