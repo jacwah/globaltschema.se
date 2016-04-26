@@ -1,1 +1,10 @@
+<p>
+  <label>Schemanamn</label>
+  <input class="id-input" type="text" inputmode="verbatim" list="schedule-id-list">
+</p>
+
 <img ng-src="{{schedule.getUrl()}}" alt="Schema" class="img-responsive">
+
+<datalist id="schedule-id-list">
+  <option ng-repeat="id in schedule.idSuggestions" value="{{id}}">
+</datalist>

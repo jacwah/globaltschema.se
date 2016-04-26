@@ -15,6 +15,11 @@ angular.module 'jacobsSchemaApp'
       width: 730
       height: 640
 
-    @getUrl = () -> scheduleImage.getUrl @options
+    @idSuggestions = ['na14a', 'na14b']
+
+    @getUrl = -> scheduleImage.getUrl @getOptions()
+
+    @getOptions = ->
+      return @options
 
     return
