@@ -10,4 +10,8 @@
 angular.module 'jacobsSchemaApp'
   .controller 'IdEditorCtrl', ->
     @ids = ['tjo', 'jfu']
+
+    @removeId = (id) ->
+      @ids.splice(@ids.indexOf(id), 1)
+
     return

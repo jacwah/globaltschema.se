@@ -79,8 +79,16 @@ body {
   }
 }
 
+.id-editor-block {
+  margin: 10px 0 10px 0;
+}
+
 .schedule-id {
   margin: -3px 3px 0 3px;
   background-color: #e7e7e7;
   padding: .4em .5em;
+}
+
+.id-remove:hover {
+  cursor: pointer;
 }

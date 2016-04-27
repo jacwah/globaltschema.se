@@ -1,10 +1,12 @@
-<p>
+<div class="id-editor-block">
   <label>Schemanamn</label>
   <div class="id-editor" ng-controller="IdEditorCtrl as idEditor">
-    <span class="schedule-id" ng-repeat="id in idEditor.ids">{{id}}</span>
+    <span class="schedule-id" ng-repeat="id in idEditor.ids">
+      {{id}} <span class="glyphicon glyphicon-remove id-remove" ng-click="idEditor.removeId(id)"></span>
+    </span>
     <input class="id-input" type="text" inputmode="verbatim" list="schedule-id-list">
   </div>
-</p>
+</div>
 
 <img ng-src="{{schedule.getUrl()}}" alt="Schema" class="img-responsive">
 
