@@ -1,8 +1,8 @@
 <div class="row id-editor-row">
   <label class="col-sm-2">Schemanamn</label>
   <div class="col-sm-10" ng-controller="IdEditorCtrl as idEditor">
-    <span class="schedule-id" ng-repeat="id in idEditor.ids">
-      {{id}} <span class="glyphicon glyphicon-remove id-remove" ng-click="idEditor.removeId(id)"></span>
+    <span class="schedule-id" ng-repeat="id in currentSchedule.getIds()">
+      {{id}} <span class="glyphicon glyphicon-remove id-remove" ng-click="currentSchedule.removeId(id)"></span>
     </span>
     <input class="id-input" type="text" inputmode="verbatim" list="schedule-id-list" ng-model="idInput" ng-change="idEditor.inputChanged()" ng-trim="false">
   </div>

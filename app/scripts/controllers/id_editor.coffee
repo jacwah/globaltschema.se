@@ -8,16 +8,13 @@
  # editor.
 ###
 angular.module 'jacobsSchemaApp'
-  .controller 'IdEditorCtrl', ($scope) ->
-    @ids = ['tjo', 'jfu']
+  .controller 'IdEditorCtrl', ($scope, currentSchedule) ->
+    $scope.currentSchedule = currentSchedule
 
     @inputChanged = ->
       id = $scope.idInput
       if id.endsWith(' ') and id.trim().length > 0
-        @ids.push(id.trim())  
+        currentSchedule.addId(id.trim())
         $scope.idInput = ""
-
-    @removeId = (id) ->
-      @ids.splice(@ids.indexOf(id), 1)
 
     return
