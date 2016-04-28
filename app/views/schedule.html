@@ -1,6 +1,6 @@
-<div class="id-editor-block">
-  <label>Schemanamn</label>
-  <div class="id-editor" ng-controller="IdEditorCtrl as idEditor">
+<div class="row id-editor-row">
+  <label class="col-sm-2">Schemanamn</label>
+  <div class="col-sm-10" ng-controller="IdEditorCtrl as idEditor">
     <span class="schedule-id" ng-repeat="id in idEditor.ids">
       {{id}} <span class="glyphicon glyphicon-remove id-remove" ng-click="idEditor.removeId(id)"></span>
     </span>
@@ -8,7 +8,9 @@
   </div>
 </div>
 
-<img ng-src="{{schedule.getUrl()}}" alt="Schema" class="img-responsive">
+<div class="row schedule-image-row">
+  <img class="col-xs-12 img-responsive" ng-src="{{schedule.getUrl()}}" alt="Schema">
+</div>
 
 <datalist id="schedule-id-list">
   <option ng-repeat="id in schedule.idSuggestions" value="{{id}}">

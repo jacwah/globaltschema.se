@@ -79,10 +79,6 @@ body {
   }
 }
 
-.id-editor-block {
-  margin: 10px 0 10px 0;
-}
-
 .schedule-id {
   margin: -3px 3px 0 3px;
   background-color: #e7e7e7;
@@ -91,4 +87,14 @@ body {
 
 .id-remove:hover {
   cursor: pointer;
+}
+
+.schedule-image-row {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.id-input: {
+  display: inline-block;
+  min-width: 12ch;
 }
