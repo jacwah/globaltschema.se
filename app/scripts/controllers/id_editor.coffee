@@ -8,13 +8,13 @@
  # editor.
 ###
 angular.module 'jacobsSchemaApp'
-  .controller 'IdEditorCtrl', ($scope, currentSchedule) ->
-    $scope.currentSchedule = currentSchedule
+  .controller 'IdEditorCtrl', ($scope, currentIds) ->
+    $scope.currentIds = currentIds
 
     @inputChanged = ->
       id = $scope.idInput
       if id.endsWith(' ') and id.trim().length > 0
-        currentSchedule.addId(id.trim())
+        currentIds.add(id.trim())
         $scope.idInput = ""
 
     return

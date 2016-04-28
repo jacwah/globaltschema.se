@@ -2,23 +2,23 @@
 
 ###*
  # @ngdoc service
- # @name jacobsSchemaApp.currentSchedule
+ # @name jacobsSchemaApp.currentIds
  # @description
- # # currentSchedule
+ # # currentIds
  # Service in the jacobsSchemaApp.
 ###
 angular.module 'jacobsSchemaApp'
-  .service 'currentSchedule', ->
+  .service 'currentIds', ->
     @ids = []
 
-    @addId = (id) ->
+    @add = (id) ->
       unless id in @ids
         @ids.push(id)
 
-    @removeId = (id) ->
+    @remove = (id) ->
       @ids.splice(@ids.indexOf(id), 1)
 
-    @getIds = ->
+    @get = ->
       @ids
 
     return
