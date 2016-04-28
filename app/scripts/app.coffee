@@ -26,4 +26,6 @@ angular
         controllerAs: 'about'
       .otherwise
         redirectTo: '/'
+  .run ->
+    moment.locale 'sv'
 
