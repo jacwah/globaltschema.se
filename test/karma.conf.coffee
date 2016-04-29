@@ -23,9 +23,9 @@ module.exports = (config) ->
       'bower_components/angular-route/angular-route.js'
       'bower_components/angular-touch/angular-touch.js'
       'bower_components/moment/moment.js'
-      'bower_components/moment/locale/sv.js'
       'bower_components/angular-mocks/angular-mocks.js'
       # endbower
+      'bower_components/moment/locale/sv.js'
       # bower:coffee
       'app/scripts/**/*.coffee'
       'test/mock/**/*.coffee'
