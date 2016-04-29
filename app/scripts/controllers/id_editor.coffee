@@ -12,19 +12,25 @@ angular.module 'jacobsSchemaApp'
     $scope.currentIds = currentIds
     $scope.idInput = ''
 
-    @addInput = ->
-      currentIds.add($scope.idInput.trim())
-      $scope.idInput = ""
-
     @inputChanged = ->
-      id = $scope.idInput
-      if id.endsWith(' ') and id.trim().length > 0
-        @addInput()
+      # Handle cases e.g. when user pastes "na14a na14b "
+      ids = $scope.idInput.trimLeft().split(' ')
+      if ids.length
+        # The user might paste "na14a na14b", na14b will still be in input
+        $scope.idInput = ids.splice(-1)
+      else
+        return
+
+      for id in ids[..1]
+        currentIds.add(id)
 
     @keyPressed = (event) ->
-      if $scope.idInputCaret == 0 and event.key == 'Backspace'
-        currentIds.removeLast()
-      if event.key == 'Enter'
-        @addInput()
+      switch event.key
+        when 'Backspace'
+          if $scope.idInputCaret == 0
+            currentIds.removeLast()
+        when 'Enter'
+          currentIds.add($scope.idInput.trim())
+          $scope.idInput = ""
 
     return
