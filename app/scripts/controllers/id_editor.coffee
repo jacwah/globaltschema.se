@@ -12,14 +12,19 @@ angular.module 'jacobsSchemaApp'
     $scope.currentIds = currentIds
     $scope.idInput = ''
 
+    @addInput = ->
+      currentIds.add($scope.idInput.trim())
+      $scope.idInput = ""
+
     @inputChanged = ->
       id = $scope.idInput
       if id.endsWith(' ') and id.trim().length > 0
-        currentIds.add(id.trim())
-        $scope.idInput = ""
+        @addInput()
 
     @keyPressed = (event) ->
       if $scope.idInputCaret == 0 and event.key == 'Backspace'
         currentIds.removeLast()
+      if event.key == 'Enter'
+        @addInput()
 
     return
