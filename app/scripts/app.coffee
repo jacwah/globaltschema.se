@@ -12,7 +12,8 @@ angular
   .module 'jacobsSchemaApp', [
     'ngMessages',
     'ngRoute',
-    'ngTouch'
+    'ngTouch',
+    'leodido.caretAware'
   ]
   .config ($routeProvider) ->
     $routeProvider

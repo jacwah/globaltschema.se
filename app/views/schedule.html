@@ -6,7 +6,7 @@
         {{id}} <span class="glyphicon glyphicon-remove id-remove" ng-click="currentIds.remove(id)"></span>
       </span>
       <span>
-        <input class="id-input" type="text" inputmode="verbatim" list="schedule-id-list" ng-model="idInput" ng-change="idEditor.inputChanged()" ng-trim="false" ng-keypress="idEditor.keyPressed($event)">
+        <input class="id-input" type="text" inputmode="verbatim" list="schedule-id-list" ng-model="idInput" ng-change="idEditor.inputChanged()" ng-trim="false" ng-keypress="idEditor.keyPressed($event)" caret-aware="idInputCaret">
       </span>
     </div>
   </div>

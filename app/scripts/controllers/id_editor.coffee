@@ -19,7 +19,7 @@ angular.module 'jacobsSchemaApp'
         $scope.idInput = ""
 
     @keyPressed = (event) ->
-      if $scope.idInput.length == 0 and event.key == 'Backspace'
+      if $scope.idInputCaret == 0 and event.key == 'Backspace'
         currentIds.removeLast()
 
     return
