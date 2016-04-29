@@ -26,3 +26,10 @@ describe 'Service: currentIds', ->
     currentIds.remove 'TJO'
 
     expect(currentIds.get()).toEqual ['JFU']
+
+  it 'can remove the last item', ->
+    currentIds.add 'TJO'
+    currentIds.add 'JFU'
+    currentIds.removeLast()
+
+    expect(currentIds.get()).toEqual ['TJO']

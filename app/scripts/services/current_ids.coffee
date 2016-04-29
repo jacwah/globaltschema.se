@@ -18,6 +18,9 @@ angular.module 'jacobsSchemaApp'
     @remove = (id) ->
       @ids.splice(@ids.indexOf(id), 1)
 
+    @removeLast = ->
+      @ids.pop()
+
     @get = ->
       @ids
 
