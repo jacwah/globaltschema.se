@@ -30,7 +30,9 @@ angular.module 'jacobsSchemaApp'
           if $scope.idInputCaret == 0
             currentIds.removeLast()
         when 'Enter'
-          currentIds.add($scope.idInput.trim())
-          $scope.idInput = ""
+          id = $scope.idInput.toString().trim()
+          if id.length > 0
+            currentIds.add(id)
+            $scope.idInput = ''
 
     return
