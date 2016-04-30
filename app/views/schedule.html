@@ -23,6 +23,8 @@
   </div>
 </div>
 
-<datalist id="schedule-id-list">
-  <option ng-repeat="id in schedule.idSuggestions" value="{{id}}">
+<datalist id="schedule-id-list" ng-controller="IdSuggestionsCtrl as idSuggestions">
+  <!-- Space after id to automatically add in id editor. Empty expression
+       prevents trailing space to be omitted. -->
+  <option ng-repeat="id in idSuggestions.list" value="{{id}} {{}}">
 </datalist>
