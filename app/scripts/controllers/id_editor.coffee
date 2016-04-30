@@ -14,14 +14,11 @@ angular.module 'jacobsSchemaApp'
 
     @inputChanged = ->
       # Handle cases e.g. when user pastes "na14a na14b "
-      ids = $scope.idInput.trimLeft().split(' ')
-      if ids.length
-        # The user might paste "na14a na14b", na14b will still be in input
-        $scope.idInput = ids.splice(-1)
-      else
-        return
+      ids = $scope.idInput.trimLeft().split(/\s+/)
+      # The user might paste "na14a na14b", na14b will still be in input
+      $scope.idInput = ids.splice(-1)
 
-      for id in ids[..1]
+      for id in ids
         currentIds.add(id)
 
     @keyPressed = (event) ->
