@@ -22,7 +22,7 @@ describe 'Service: selectedWeek', ->
       jasmine.clock().mockDate date.toDate()
       expect(selectedWeek.get()).toEqual 17
 
-    it 'is the current week on mondays', ->
+    it 'is the current week on fridays', ->
       date = moment('2016-04-29')
       jasmine.clock().mockDate date.toDate()
       expect(selectedWeek.get()).toEqual 17
