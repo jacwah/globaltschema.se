@@ -7,25 +7,26 @@ describe 'Controller: IdEditorCtrl', ->
 
   IdEditorCtrl = {}
   $scope = {}
-  idList = []
+  currentIds = {}
 
   # Initialize the controller and a mock scope
-  beforeEach inject ($controller, $rootScope) ->
+  beforeEach inject ($controller, $rootScope, _currentIds_) ->
     $scope = $rootScope.$new()
-    idList = []
+    currentIds = _currentIds_
     IdEditorCtrl = $controller 'IdEditorCtrl', {
       $scope: $scope
-      currentIds:
-        add: (id) ->
-          idList.push(id)
     }
+
+  beforeEach ->
+      spyOn(currentIds, 'add')
 
   describe 'inputChanged', ->
 
     test = (input, expectedList, expectedInput) ->
+      expectedArgs = ([e] for e in expectedList)
       $scope.idInput = input
       IdEditorCtrl.inputChanged()
-      expect(idList).toEqual expectedList
+      expect(currentIds.add.calls.allArgs()).toEqual expectedArgs
       expect($scope.idInput).toEqual expectedInput
 
     it 'adds an id using space', ->
@@ -45,9 +46,10 @@ describe 'Controller: IdEditorCtrl', ->
 
   describe 'keyPressed', ->
     test = (input, key, expectedList, expectedInput) ->
+      expectedArgs = ([e] for e in expectedList)
       $scope.idInput = input
       IdEditorCtrl.keyPressed(key: key)
-      expect(idList).toEqual expectedList
+      expect(currentIds.add.calls.allArgs()).toEqual expectedArgs
       expect($scope.idInput).toEqual expectedInput
 
     it 'adds an id when enter is pressed', ->
