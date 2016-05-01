@@ -8,9 +8,8 @@
  # Controller of the jacobsSchemaApp
 ###
 angular.module 'jacobsSchemaApp'
-  .controller 'ScheduleCtrl', (scheduleImage, currentIds) ->
+  .controller 'ScheduleCtrl', (scheduleImage, currentIds, selectedWeek) ->
     @options =
-      week: 16
       width: 730
       height: 640
 
@@ -22,6 +21,7 @@ angular.module 'jacobsSchemaApp'
       id = currentIds.get().join(',')
       opts = @options
       opts.id = id
+      opts.week = selectedWeek.get()
       return opts
 
     return
