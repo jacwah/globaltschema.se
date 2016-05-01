@@ -19,8 +19,6 @@ angular
     $routeProvider
       .when '/',
         templateUrl: 'views/schedule.html'
-        controller: 'ScheduleCtrl'
-        controllerAs: 'schedule'
       .when '/about',
         templateUrl: 'views/about.html'
         controller: 'AboutCtrl'

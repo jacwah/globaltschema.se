@@ -16,11 +16,8 @@
   </div>
 </div>
 
-<div class="row schedule-image-row">
-  <img class="col-mid-9 img-responsive" ng-src="{{schedule.getUrl()}}" alt="Schema">
-  <div class="col-mid-3">
-    <label>Favoriter</label>
-  </div>
+<div class="row schedule-image-row" ng-controller="ScheduleCtrl as schedule">
+  <img class="col-mid-12 img-responsive" ng-src="{{schedule.getUrl()}}" alt="Schema">
 </div>
 
 <datalist id="schedule-id-list" ng-controller="IdSuggestionsCtrl as idSuggestions">
