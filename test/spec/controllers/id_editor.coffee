@@ -6,13 +6,23 @@ describe 'Controller: IdEditorCtrl', ->
   beforeEach module 'jacobsSchemaApp'
 
   IdEditorCtrl = {}
-
-  scope = {}
+  $scope = {}
+  idList = []
 
   # Initialize the controller and a mock scope
   beforeEach inject ($controller, $rootScope) ->
-    scope = $rootScope.$new()
+    $scope = $rootScope.$new()
+    idList = []
     IdEditorCtrl = $controller 'IdEditorCtrl', {
-      # place here mocked dependencies
+      $scope: $scope
+      currentIds:
+        add: (id) ->
+          idList.push(id)
     }
+
+  it 'adds an id using space', ->
+    $scope.idInput = 'na14a '
+    IdEditorCtrl.inputChanged()
+    expect(idList).toEqual ['na14a']
+    expect($scope.idInput).toEqual ''
 

@@ -16,7 +16,7 @@ angular.module 'jacobsSchemaApp'
       # Handle cases e.g. when user pastes "na14a na14b "
       ids = $scope.idInput.trimLeft().split(/\s+/)
       # The user might paste "na14a na14b", na14b will still be in input
-      $scope.idInput = ids.splice(-1)
+      $scope.idInput = ids.pop()
 
       for id in ids
         currentIds.add(id)
