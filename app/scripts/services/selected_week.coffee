@@ -15,8 +15,8 @@ angular.module 'jacobsSchemaApp'
     @getDefault = ->
       now = moment()
 
-      # Use next week on weekend
-      if now.day() > 5
+      # Use next week saturday and sunday
+      if now.isoWeekday() > 5
         now.add 1, 'weeks'
 
       return now.week()
