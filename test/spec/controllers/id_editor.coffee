@@ -45,31 +45,33 @@ describe 'Controller: IdEditorCtrl', ->
       test 'na14a na14b', ['na14a'], 'na14b'
 
   describe 'pressing enter', ->
+    ENTER = 13
 
     beforeEach ->
-        spyOn(currentIds, 'add')
+      spyOn(currentIds, 'add')
 
     test = (input, key, expectedList, expectedInput) ->
       expectedArgs = ([e] for e in expectedList)
       $scope.idInput = input
-      IdEditorCtrl.keyPressed(key: key)
+      IdEditorCtrl.keyPressed(which: key)
       expect(currentIds.add.calls.allArgs()).toEqual expectedArgs
       expect($scope.idInput).toEqual expectedInput
 
     it 'adds an id', ->
-      test 'na14a', 'Enter', ['na14a'], ''
+      test 'na14a', ENTER, ['na14a'], ''
 
   describe 'pressing backspace', ->
+    BACKSPACE = 8
 
     beforeEach ->
       spyOn(currentIds, 'removeLast')
 
     it 'calls currentIds.removeLast when caret at beginning of input', ->
       $scope.idInputCaret = 0
-      IdEditorCtrl.keyPressed(key: 'Backspace')
+      IdEditorCtrl.keyPressed(which: BACKSPACE)
       expect(currentIds.removeLast).toHaveBeenCalled()
 
     it 'does not call removeLast when caret is not at beginning of input', ->
       $scope.idInputCaret = 1
-      IdEditorCtrl.keyPressed(key: 'Backspace')
+      IdEditorCtrl.keyPressed(which: BACKSPACE)
       expect(currentIds.removeLast).not.toHaveBeenCalled()

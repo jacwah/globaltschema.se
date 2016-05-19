@@ -7,6 +7,10 @@
  # Edit schedule ids as entities. Inspired by StackExchanges' tag
  # editor.
 ###
+
+BACKSPACE = 8
+ENTER = 13
+
 angular.module 'jacobsSchemaApp'
   .controller 'IdEditorCtrl', ($scope, currentIds) ->
     $scope.currentIds = currentIds
@@ -22,11 +26,11 @@ angular.module 'jacobsSchemaApp'
         currentIds.add(id)
 
     @keyPressed = (event) ->
-      switch event.key
-        when 'Backspace'
+      switch event.which
+        when BACKSPACE
           if $scope.idInputCaret == 0
             currentIds.removeLast()
-        when 'Enter'
+        when ENTER
           id = $scope.idInput.toString().trim()
           if id.length > 0
             currentIds.add(id)
