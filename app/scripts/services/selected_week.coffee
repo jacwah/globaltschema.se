@@ -10,7 +10,16 @@
 angular.module 'jacobsSchemaApp'
   .service 'selectedWeek', ->
     @get = ->
-      @selected or @getDefault()
+      @_selected or @getDefault()
+
+    @set = (week) ->
+      if typeof week != 'number'
+        throw TypeError 'Week must be number'
+
+      if 1 > week or 53 < week
+        throw RangeError 'Week out of range'
+
+      @_selected = week
 
     @getDefault = ->
       now = moment()

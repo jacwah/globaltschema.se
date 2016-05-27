@@ -36,3 +36,17 @@ describe 'Service: selectedWeek', ->
       date = moment('2016-05-01')
       jasmine.clock().mockDate(date.toDate())
       expect(selectedWeek.get()).toEqual 18
+
+  describe 'set', ->
+
+    it 'sets a correct week', ->
+      date = moment('2016-04-25')
+      jasmine.clock().mockDate date.toDate()
+      selectedWeek.set 20
+      expect(selectedWeek.get()).toEqual 20
+
+    it 'throws TypeError for non-number values', ->
+      expect(() -> selectedWeek.set undefined).toThrowError(TypeError)
+
+    it 'throws RangeError if week out of range', ->
+      expect(() -> selectedWeek.set 54).toThrowError(RangeError)
