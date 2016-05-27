@@ -9,10 +9,10 @@
 ###
 angular.module 'jacobsSchemaApp'
   .service 'dateRange', ->
-    pivot = month: 6, day: 1
+    pivot = month: 'July', date: 1
 
     @isFallTerm = (date) ->
-      return date.set(pivot).isBefore(date)
+      return moment(date).set(pivot).isBefore(date)
 
     @minDate = (dateWithinSemester) ->
       if not @isFallTerm(dateWithinSemester)
