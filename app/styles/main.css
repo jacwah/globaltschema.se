@@ -42,3 +42,7 @@ body {
   overflow: hidden;
   white-space: nowrap;
 }
+
+.bootstrap-datetimepicker-widget tr:hover {
+    background-color: #EEEEEE;
+}
