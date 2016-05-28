@@ -381,6 +381,7 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             '*.html',
+            '*.json',
             'images/{,*/}*.{webp}',
             'styles/fonts/{,*/}*.*'
           ]
@@ -402,6 +403,12 @@ module.exports = function (grunt) {
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
       }
+    },
+
+    'json-minify': {
+        build: {
+            files: '<%= yeoman.dist %>/*.json'
+        }
     },
 
     // Run some tasks in parallel to speed up the build process
@@ -476,7 +483,8 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'json-minify'
   ]);
 
   grunt.registerTask('default', [
