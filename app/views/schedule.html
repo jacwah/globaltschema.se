@@ -1,14 +1,7 @@
 <div class="row">
   <div class="form-group col-md-6">
     <label>Schemanamn</label>
-    <div class="id-editor form-control" tabindex="-1" ng-controller="IdEditorCtrl as idEditor">
-      <span class="schedule-id" ng-repeat="id in currentIds.get()">
-        {{id}} <span class="glyphicon glyphicon-remove id-remove" ng-click="currentIds.remove(id)"></span>
-      </span>
-      <span>
-        <input class="id-input" type="text" inputmode="verbatim" list="schedule-id-list" ng-model="idInput" ng-change="idEditor.inputChanged()" ng-trim="false" ng-keydown="idEditor.keyPressed($event)" caret-aware="idInputCaret">
-      </span>
-    </div>
+    <id-editor></id-editor>
   </div>
 
   <div class="form-group col-md-6" ng-controller="WeekCtrl as weekCtrl">
