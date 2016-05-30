@@ -1,7 +1,7 @@
 <div class="row">
   <div class="form-group col-md-6">
     <label>Schemanamn</label>
-    <div class="id-editor" ng-controller="IdEditorCtrl as idEditor">
+    <div class="id-editor form-control" tabindex="-1" ng-controller="IdEditorCtrl as idEditor">
       <span class="schedule-id" ng-repeat="id in currentIds.get()">
         {{id}} <span class="glyphicon glyphicon-remove id-remove" ng-click="currentIds.remove(id)"></span>
       </span>
