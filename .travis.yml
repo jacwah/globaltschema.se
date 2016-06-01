@@ -1,0 +1,4 @@
+# Continuous integration config for travis-ci.org
+language: node_js
+node_js:
+  node  # Latest version
