@@ -43,6 +43,6 @@
   },
   "scripts": {
     "pretest": "coffee -o .tmp/ -c test/karma.conf.coffee",
-    "test": "karma start .tmp/karma.conf.js"
+    "test": "karma run .tmp/karma.conf.js"
   }
 }
