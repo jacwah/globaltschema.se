@@ -1,7 +1,13 @@
 # Jacobs schema
 
-## Build & development
+## Install development tools
 
-- Run `grunt` to test and build.
-- Run `grunt serve` to host a local instance.
-- Run `npm test` to continually run unit tests.
+- First make sure you have `npm` installed.
+- Run `npm install`.
+- Then run `npm install -g grunt`.
+
+## Build and develop
+
+- Run `grunt` to test and build to dist/ directory.
+- Run `grunt serve` to host a local instance at localhost:9000.
+- Run `grunt test --watch` to continually run unit tests.

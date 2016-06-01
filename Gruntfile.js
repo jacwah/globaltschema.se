@@ -430,10 +430,11 @@ module.exports = function (grunt) {
     },
 
     // Test settings
+    // Keep alive with --watch
     karma: {
       unit: {
         configFile: 'test/karma.conf.coffee',
-        singleRun: false
+        singleRun: !grunt.option('watch')
       }
     }
   });
