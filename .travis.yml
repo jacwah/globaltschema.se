@@ -10,10 +10,10 @@ before_script:
 script: grunt   # Build and test
 
 # Deploy using awscli to enable pruning of removed files
-before_deploy: pip install awscli
+before_deploy: pip install --user awscli
 deploy:
   provider: script
-  script: aws s3 sync dist s3://globaltschema.se --region=eu-central-1 --delete
+  script: ~/.local/bin/aws s3 sync dist s3://globaltschema.se --region=eu-central-1 --delete
   on:
     branch: master
 
