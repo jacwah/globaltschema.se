@@ -4,7 +4,8 @@
 
 - First make sure you have `npm` installed.
 - Run `npm install`.
-- Then run `npm install -g grunt`.
+- Then run `npm install -g grunt bower`.
+- Finally `bower install`.
 
 ## Build and develop
 

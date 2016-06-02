@@ -4,7 +4,8 @@ node_js:
   node  # Latest version
 
 before_script:
-  npm install -g grunt
+  npm install -g grunt bower
+  bower install
 
 script:
   grunt test
