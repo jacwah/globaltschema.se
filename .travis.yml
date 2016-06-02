@@ -1,11 +1,10 @@
 # Continuous integration config for travis-ci.org
 language: node_js
 node_js:
-  node  # Latest version
+  - node  # Latest version
 
 before_script:
-  npm install -g grunt bower
-  bower install
+  - npm install -g grunt bower
+  - bower install
 
-script:
-  grunt test
+script: grunt test
