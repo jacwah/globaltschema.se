@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Globalt Schema</title>
-    <meta name="description" content="Visa ditt schema på Globala Gymnasiet på ett smidigare sätt!">
+    <meta name="description" content="Globalt Schema är ett smidigare sätt att visa ditt schema på Globla Gymnasiet. Du kan använda Globalt Schema båda på din dator och i din telefon!">
     <meta name="viewport" content="width=device-width">
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -30,35 +30,28 @@
       <div class="alert alert-warning" role="alert">Du använder en <strong>utdaterad</strong> webbläsare. <a href="http://browsehappy.com/">Upgradera den</a> för en bättre upplevelse!</div>
     <![endif]-->
 
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <a class="navbar-brand" href="#/">Globalt Schema</a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Hem</a></li>
-              <li><a ng-href="#/about">Om</a></li>
-            </ul>
-          </div>
+    <header class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#/">Globalt Schema</a>
         </div>
       </div>
-    </div>
+    </header>
 
     <div class="container">
-    <div ng-view=""></div>
+      <div ng-view=""></div>
     </div>
+
+    <footer class="text-muted">
+      <div class="container">
+        <ul class="footer-links">
+          <li><a href="https://github.com/jacwah/jacobs-schema-web">Github</a></li>
+          <li><a href="mailto:jacob.wahlgren@gmail.com">Mejl</a></li>
+        </ul>
+        <p>Globalt Schema är ett smidigare sätt att visa ditt schema på Globla Gymnasiet. Du kan använda Globalt Schema båda på din dator och i din telefon!</p>
+        <p>Skapat av Jacob Wahlgren.</p>
+      </div>
+    </footer>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
