@@ -33,6 +33,9 @@ footer p {
     display: inline-block;
     margin-left: 0;
     margin-right: 15px;
+}
+
+.footer-links a {
     color: #333;
 }
 
