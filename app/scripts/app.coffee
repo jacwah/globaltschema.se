@@ -13,18 +13,18 @@ angular
     'ngMessages',
     'ngRoute',
     'ngTouch',
-    'leodido.caretAware'
+    'leodido.caretAware',
+    'LocalStorageModule'
   ]
-  .config ($routeProvider) ->
+  .config ($routeProvider, localStorageServiceProvider) ->
     $routeProvider
       .when '/',
         templateUrl: 'views/schedule.html'
-      .when '/about',
-        templateUrl: 'views/about.html'
-        controller: 'AboutCtrl'
-        controllerAs: 'about'
       .otherwise
         redirectTo: '/'
+    localStorageServiceProvider
+      .setPrefix 'jacobsSchema'
+
   .run ->
     moment.locale 'sv'
 
