@@ -7,14 +7,18 @@
  # # registerImageLoadFailed
 ###
 angular.module 'jacobsSchemaApp'
-  .directive 'registerImageLoadFailed', ->
+  .directive 'registerImageLoadFailed', ($timeout) ->
     restrict: 'A'
-    template: '<div></div>'
     link: (scope, element, attrs) ->
       scope.imageLoadFailed = false
 
-      element.bind('error', (event) ->
+      element.bind('error abort', (event) ->
         scope.imageLoadFailed = true
         scope.$apply()
       )
+
+      $timeout(() ->
+        if !element[0].complete
+          scope.imageLoadFailed = true
+      , 5000)
 

@@ -24,7 +24,6 @@ module.exports = (config) ->
       'bower_components/angular-touch/angular-touch.js'
       'bower_components/moment/moment.js'
       'bower_components/ng-caret-aware/dist/caretaware.min.js'
-      'bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js'
       'bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js'
       'bower_components/angular-local-storage/dist/angular-local-storage.js'
       'bower_components/angular-mocks/angular-mocks.js'
