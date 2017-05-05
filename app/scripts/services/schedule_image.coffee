@@ -28,13 +28,14 @@ angular.module 'jacobsSchemaApp'
       ("#{k}=#{v}" for k, v of o).join '&'
 
     @isValidOptions = (options) ->
-      for key in ['id', 'week', 'width', 'height']
-        return false unless key in options
-
-      return true
+      required = ['id', 'week', 'width', 'height']
+      required.every (key) ->
+        options.hasOwnProperty key
 
     @getUrl = (options) ->
-      if @isValidOptions
+      if @isValidOptions options
         "#{@webServicePath}?" + @_parameters(options)
+      else
+        ''
 
     return

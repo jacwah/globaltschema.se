@@ -56,3 +56,28 @@ describe 'Service: scheduleImage', ->
       expect('http://example.com/?a=1&b=2').toEqual 'http://example.com/?b=2&a=1'
       expect('http://example.com/?a=1&b=2').not.toEqual 'http://example.com/?b=1&a=1'
 
+  describe 'isValidOptions', ->
+    isValidExcluding = (key) ->
+      opts = id: 'na14b', week: 18, width: 480, height: 480
+      if key?
+        delete opts[key]
+      return scheduleImage.isValidOptions opts
+
+    it 'is true when id, week, width and height are specified', ->
+      expect(isValidExcluding()).toBe true
+
+    it 'is false when id is omitted', ->
+      expect(isValidExcluding 'id').toBe false
+
+    it 'is false when week is omitted', ->
+      expect(isValidExcluding 'week').toBe false
+
+    it 'is false when width is omitted', ->
+      expect(isValidExcluding 'width').toBe false
+
+    it 'is false when height is omitted', ->
+      expect(isValidExcluding 'height').toBe false
+
+  it 'returns the empty string when isValidOptions is false', ->
+    scheduleImage.isValidOptions = -> false
+    expect(scheduleImage.getUrl()).toEqual ''
