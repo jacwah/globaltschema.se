@@ -37,3 +37,17 @@ describe 'Directive: registerImageLoadFailed', ->
     expect(scope.imageLoadFailed).toBe false
     $timeout.flush(5000)
     expect(scope.imageLoadFailed).toBe false
+
+  it 'should preserve imageLoadFailed on load event if not previously failed', ->
+    element[0].complete = true
+    expect(scope.imageLoadFailed).toBe false
+    element.trigger 'load'
+    expect(scope.imageLoadFailed).toBe false
+
+  it 'should unset imageLoadFailed on load event if previously failed', ->
+    element[0].complete = false
+    expect(scope.imageLoadFailed).toBe false
+    $timeout.flush(5000)
+    expect(scope.imageLoadFailed).toBe true
+    element.trigger 'load'
+    expect(scope.imageLoadFailed).toBe false

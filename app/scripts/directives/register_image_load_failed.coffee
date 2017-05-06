@@ -17,6 +17,12 @@ angular.module 'jacobsSchemaApp'
         scope.$apply()
       )
 
+      element.bind('load', (event) ->
+        if scope.imageLoadFailed
+          scope.imageLoadFailed = false
+          scope.$apply()
+      )
+
       $timeout(() ->
         if !element[0].complete
           scope.imageLoadFailed = true
